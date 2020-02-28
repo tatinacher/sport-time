@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { Book } from "./features/book";
 import { TaskTracker } from "./features/task-tracker";
 import { SportTime } from "./features/sport-time";
+import { BrowserRouter as Link, Router, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   const progress = [
@@ -20,10 +21,31 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div>
-      <Header></Header>
-      <SportTime />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/sport">Sport</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+        <Header></Header>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/sport">
+            <SportTime />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
