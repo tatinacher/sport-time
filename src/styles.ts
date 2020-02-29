@@ -10,6 +10,7 @@ export const Navigation = styled.ul`
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding-left: 0;
 `;
 export const Element = styled.li`
   list-style-type: none;
@@ -17,6 +18,7 @@ export const Element = styled.li`
   a {
     text-decoration: none;
     color: var(--black);
+    font-size: 14px;
   }
   a:hover {
     cursor: pointer;

@@ -89,12 +89,16 @@ export const ListOfBuyings: (nutrition: NutritionProps) => any = ({ days }) => {
     day.food.forEach(el => {
       el.ingridients.forEach(ingridient => {
         const name = ingridient.name;
-        const quantity = ingridient.quantity;
+        const quantity = Math.ceil(ingridient.quantity / parseInt(el.portions));
         const index = toBuy.findIndex(el => el.name === name);
         if (index !== -1) {
-          toBuy[index].quantity += Math.ceil(quantity / parseInt(el.portions));
+          toBuy[index].quantity += quantity;
         } else {
-          toBuy.push(ingridient);
+          toBuy.push({
+            name: name,
+            quantity: quantity,
+            measure: ingridient.measure
+          });
         }
       });
     })

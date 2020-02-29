@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24e54b2e40d1bbefde26bf54181a2e43",
+    "revision": "b9c2319903fba8f992b553155dd08ad5",
     "url": "/sport-time/index.html"
   },
   {
-    "revision": "d81a0ce77ef97143da2b",
+    "revision": "78b91b9bf72e9508774c",
     "url": "/sport-time/static/css/main.8b597cd5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sport-time/static/js/2.d68be723.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d81a0ce77ef97143da2b",
-    "url": "/sport-time/static/js/main.370183dd.chunk.js"
+    "revision": "78b91b9bf72e9508774c",
+    "url": "/sport-time/static/js/main.bd9b3ae6.chunk.js"
   },
   {
     "revision": "9a5ceba69a4c8853fc90",

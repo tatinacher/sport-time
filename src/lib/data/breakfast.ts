@@ -79,7 +79,7 @@ export const breakfast = [
         measure: "гр"
       },
       {
-        name: "Грецкие орехи",
+        name: "Грецкий орех",
         quantity: 30,
         measure: "гр"
       },

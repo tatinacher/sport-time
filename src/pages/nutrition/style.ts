@@ -103,7 +103,7 @@ export const ListOfFood = styled.div`
   background: #f7edf0;
   text-align: center;
   font-size: 20px;
-  width: 300px;
+  width: 250px;
   margin: 0 auto;
   border-radius: 3px;
   border-bottom: 2px solid #f4cbc6;

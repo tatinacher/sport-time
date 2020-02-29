@@ -13,25 +13,23 @@ const App: React.FC = () => {
   return (
     <Router>
       <div>
-        <Header>
-          <nav>
-            <Navigation>
-              <Element>
-                <Link to="/">Home</Link>
-              </Element>
-              <Element>
-                <Link to="/sport">Training</Link>
-              </Element>
-              <Element>
-                <Link to="/nutrition">Nutrition</Link>
-              </Element>
-            </Navigation>
-          </nav>
-        </Header>
+        <nav>
+          <Navigation>
+            <Element>
+              <Link to="/sport-time/">Home</Link>
+            </Element>
+            <Element>
+              <Link to="/sport-time/sport">Training</Link>
+            </Element>
+            <Element>
+              <Link to="/sport-time/nutrition">Nutrition</Link>
+            </Element>
+          </Navigation>
+        </nav>
         <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/sport" component={SportTime} />
-          <Route path="/nutrition" component={Nutrition} />
+          <Route path="/sport-time/" exact component={Main} />
+          <Route path="/sport-time/sport" component={SportTime} />
+          <Route path="/sport-time/nutrition" component={Nutrition} />
         </Switch>
       </div>
     </Router>
