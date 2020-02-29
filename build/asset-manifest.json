@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sport-time/static/css/main.8b597cd5.chunk.css",
+    "main.js": "/sport-time/static/js/main.370183dd.chunk.js",
+    "main.js.map": "/sport-time/static/js/main.370183dd.chunk.js.map",
+    "runtime-main.js": "/sport-time/static/js/runtime-main.3d549674.js",
+    "runtime-main.js.map": "/sport-time/static/js/runtime-main.3d549674.js.map",
+    "static/js/2.d68be723.chunk.js": "/sport-time/static/js/2.d68be723.chunk.js",
+    "static/js/2.d68be723.chunk.js.map": "/sport-time/static/js/2.d68be723.chunk.js.map",
+    "index.html": "/sport-time/index.html",
+    "precache-manifest.60e2965441e8cbe01745adbf4ca2142f.js": "/sport-time/precache-manifest.60e2965441e8cbe01745adbf4ca2142f.js",
+    "service-worker.js": "/sport-time/service-worker.js",
+    "static/css/main.8b597cd5.chunk.css.map": "/sport-time/static/css/main.8b597cd5.chunk.css.map",
+    "static/js/2.d68be723.chunk.js.LICENSE.txt": "/sport-time/static/js/2.d68be723.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d549674.js",
+    "static/js/2.d68be723.chunk.js",
+    "static/css/main.8b597cd5.chunk.css",
+    "static/js/main.370183dd.chunk.js"
+  ]
+}

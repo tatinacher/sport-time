@@ -25,6 +25,14 @@ export const AllIngridients = styled.div`
   padding: 10px 0;
 `;
 
+export const AllFood: StyledComponent<"div", any, any> = styled.div.attrs(map)`
+  padding: 10px 0;
+  display: none;
+  &[data-open="true"] {
+    display: block;
+  }
+`;
+
 export const Ingridient = styled.div`
   display: flex;
   justify-content: space-between;
@@ -87,4 +95,20 @@ export const WeekdayIcon = styled.div<{ icon: string }>`
 export const Weekend = styled.div`
   display: flex;
   flex-wrap: wrap;
+`;
+
+export const ListOfFood = styled.div`
+  padding: 15px 0;
+  font-weight: bold;
+  background: #f7edf0;
+  text-align: center;
+  font-size: 20px;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 3px;
+  border-bottom: 2px solid #f4cbc6;
+  border-right: 2px solid #f4cbc6;
+  :hover {
+    cursor: pointer;
+  }
 `;

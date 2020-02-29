@@ -2,7 +2,7 @@
   "name": "planner",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tatinacher.github.io/get-fit/",
+  "homepage": "https://tatinacher.github.io/sport-time/",
   "dependencies": {
     "@babel/core": "^7.7.7",
     "@storybook/react": "^5.2.8",

@@ -1,10 +1,12 @@
 import * as React from "react";
 import { nutrition } from "../../lib/data/nutrition";
 import {
+  AllFood,
   AllIngridients,
   Ingridient,
   IngridientName,
   IngridientPortion,
+  ListOfFood,
   MealBlock,
   MealDescription,
   MealName,
@@ -38,6 +40,11 @@ interface WeekdayProps {
   weekday: string;
   icon: string;
   food: DishProps[];
+}
+
+interface NutritionProps {
+  week: number;
+  days: WeekdayProps[];
 }
 
 export const Ingridients: React.FC<{ food: IngridientsProps[] }> = ({
@@ -76,14 +83,68 @@ export const Meal: React.FC<{ meals: any }> = ({ meals }) => {
   );
 };
 
-export const Nutrition: React.FC = () => (
-  <Weekend>
-    {nutrition[0].days.map(day => (
-      <Weekday>
-        <img src={day.icon} />
-        <WeekdayTitle>{day.weekday}</WeekdayTitle>
-        <Meal meals={day.food} />
-      </Weekday>
-    ))}
-  </Weekend>
-);
+export const ListOfBuyings: (nutrition: NutritionProps) => any = ({ days }) => {
+  const toBuy: IngridientsProps[] = [];
+  days.forEach(day =>
+    day.food.forEach(el => {
+      el.ingridients.forEach(ingridient => {
+        const name = ingridient.name;
+        const quantity = ingridient.quantity;
+        const index = toBuy.findIndex(el => el.name === name);
+        if (index !== -1) {
+          toBuy[index].quantity += Math.ceil(quantity / parseInt(el.portions));
+        } else {
+          toBuy.push(ingridient);
+        }
+      });
+    })
+  );
+  return toBuy;
+};
+
+export const FoodList: React.FC<{ nutrition: any }> = ({ nutrition }) => {
+  const [isOpen, setOpen] = React.useState(false);
+  const toBuy = ListOfBuyings(nutrition[0]);
+  const food = toBuy ? (
+    <AllFood isOpen={isOpen}>
+      {toBuy
+        .sort((first: IngridientsProps, second: IngridientsProps) =>
+          first.name.localeCompare(second.name)
+        )
+        .map((el: IngridientsProps) => (
+          <Ingridient>
+            <IngridientName>{el.name}</IngridientName>
+            <IngridientPortion>
+              {el.quantity}
+              {el.measure}
+            </IngridientPortion>
+          </Ingridient>
+        ))}
+    </AllFood>
+  ) : null;
+  return (
+    <>
+      <ListOfFood onClick={React.useCallback(() => setOpen(!isOpen), [isOpen])}>
+        Список покупок
+      </ListOfFood>
+      {food}
+    </>
+  );
+};
+
+export const Nutrition: React.FC = () => {
+  return (
+    <>
+      <FoodList nutrition={nutrition} />
+      <Weekend>
+        {nutrition[0].days.map(day => (
+          <Weekday>
+            <img src={day.icon} alt="" />
+            <WeekdayTitle>{day.weekday}</WeekdayTitle>
+            <Meal meals={day.food} />
+          </Weekday>
+        ))}
+      </Weekend>
+    </>
+  );
+};
