@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled, { StyledComponent } from "styled-components";
-import ReactPlayer from "react-player";
+import styled from "styled-components";
+//import ReactPlayer from "react-player";
 import * as DATA from "../../constants/index";
 
 export const SportTime: React.FC<{}> = () => {
