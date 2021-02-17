@@ -27,7 +27,7 @@ const App: React.FC = () => {
           </Navigation>
         </nav>
         <Switch>
-          <Route path="/sport-time/" exact component={Main} />
+          <Route path="/sport-time/" exact component={SportTime} />
           <Route path="/sport-time/sport" component={SportTime} />
           <Route path="/sport-time/nutrition" component={Nutrition} />
         </Switch>
